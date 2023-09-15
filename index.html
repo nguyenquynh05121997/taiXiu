@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>game-tai-xiu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+      <div class="content">
+        <input class="input" type="number" name="" id="number" placeholder="Nhập số tiền hiện có">
+        <button>Tính Toán</button>
+      </div>
+        <div>
+          <h1>Tài : <span class="tai">0</span></h1>
+          <h1>Xỉu : <span class="xiu">0</span></h1>
+        </div>
+      </div>
+
+      <script>
+        const input = document.querySelector('.input')
+        const tai = document.querySelector('.tai')
+          const xiu = document.querySelector('.xiu')
+          const btn = document.querySelector('button')
+
+        let tinhToan = (sotien,heso) => {
+          let tong = sotien * heso
+          return tong
+        }
+        btn.addEventListener('click',() => {
+          let numberTai = tinhToan(input.value,0.4709)
+          let numberXiu = tinhToan(input.value, 0.5291)
+
+          tai.innerHTML = Math.floor(numberTai/1000)
+          xiu.innerHTML = Math.floor(numberXiu / 1000)
+        })
+      </script>
+</body>
+</html>
